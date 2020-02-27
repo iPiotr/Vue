@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Stars</title>
+</head>
+<body>
+    <div id="app">
+            <div class="content">
+                <star-rating :max="5" :current="value"></star-rating><br>
+                <br>
+                <button class="button" @click="randomNumberStars">Random stars: {{value}}</button>
+            </div>
+    </div>
+    
+    <script type="text/x-template" id="star-rating">
+      <div class="star-rating">
+        <span v-for="n in max">&star;</span>
+        <div class="star-rating__current" :style="{width: getRating + '%'}">
+          <span v-for="n in max">&starf;</span>
+        </div>
+      </div>
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
